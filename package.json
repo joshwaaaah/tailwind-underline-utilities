@@ -1,0 +1,29 @@
+{
+  "name": "tailwind-underline-utils",
+  "version": "1.0.0",
+  "description": "Underline utilities for TailwindCSS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "compile": "npx tailwindcss build ./src/styles.css -o ./dist/output.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jnhartshorne1994/tailwind-underline-utilities.git"
+  },
+  "keywords": [
+    "tailwind"
+  ],
+  "author": "Josh Hartshorne",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jnhartshorne1994/tailwind-underline-utilities/issues"
+  },
+  "homepage": "https://github.com/jnhartshorne1994/tailwind-underline-utilities#readme",
+  "devDependencies": {
+    "jest": "^26.0.1",
+    "jest-matcher-css": "^1.1.0",
+    "postcss": "^7.0.31",
+    "tailwindcss": "^1.4.6"
+  }
+}
