@@ -1,10 +1,10 @@
 {
   "name": "tailwind-underline-utils",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Underline utilities for TailwindCSS.",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
