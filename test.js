@@ -60,7 +60,11 @@ test('it should create underline colours based on theme config', () => {
     theme: {
       colors: {
         red: 'red',
-        green: 'green'
+        green: 'green',
+        gray: {
+          100: '#f7fafc',
+          200: '#edf2f7',
+        },
       }
     },
   }).then(css => {
@@ -85,6 +89,12 @@ test('it should create underline colours based on theme config', () => {
       }
       .underline-green {
         text-decoration-color: green;
+      }
+      .underline-gray-100 {
+        text-decoration-color: #f7fafc;
+      }
+      .underline-gray-200 {
+        text-decoration-color: #edf2f7;
       }
     `);
   });

@@ -42,9 +42,9 @@ module.exports = plugin(function({ theme, addUtilities }) {
     theme('colors')
   )
 
-  const underlineColors = _.map(colors, color => {
+  const underlineColors = _.map(colors, (color, key) => {
     return {
-      [`.underline-${color}`]: {
+      [`.underline-${key}`]: {
           textDecorationColor: color,
       },
     }
