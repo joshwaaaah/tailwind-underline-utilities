@@ -1,67 +1,79 @@
 const _ = require('lodash')
+const plugin = require('tailwindcss/plugin');
 
-module.exports = () => {
-  return ({ theme, addUtilities }) => {
-    // Colours
-    const colors = theme('colors')
-
-    const underlineColors = _.map(colors, color => {
-      return {
-        [`.underline-${color}`]: {
-            textDecorationColor: color,
-        },
+const flattenColorPalette = (colors) => {
+  return _(colors)
+    .flatMap((color, name) => {
+      if (!_.isPlainObject(color)) {
+        return [[name, color]]
       }
+
+      return _.map(color, (value, key) => {
+        const suffix = key === 'default' ? '' : `-${key}`
+        return [`${name}${suffix}`, value]
+      })
     })
-
-    // Thickness
-    const thickness = theme('underlineThickness')
-
-    const underlineThickness = _.map(thickness, (thickness, key) => {
-      return {
-        [`.underline-${key}`]: {
-            textDecorationThickness: thickness,
-        },
-      }
-    })
-
-    // Offset
-    const offset = theme('underlineOffset')
-
-    const underlineOffset = _.map(offset, (offset, key) => {
-      return {
-        [`.underline-offset-${key}`]: {
-          textUnderlineOffset: offset,
-        },
-      }
-    })
-
-    // Style
-    const underlineStyle = {
-      '.underline-solid': {
-        textDecorationStyle: 'solid',
-      },
-      '.underline-dotted': {
-        textDecorationStyle: 'dotted',
-      },
-      '.underline-double': {
-        textDecorationStyle: 'double',
-      },
-      '.underline-dashed': {
-        textDecorationStyle: 'dashed',
-      },
-      '.underline-wavy': {
-        textDecorationStyle: 'wavy',
-      }
-    }
-
-    // All
-    const customUtils = [
-      underlineColors,
-      underlineThickness,
-      underlineOffset,
-      underlineStyle
-    ]
-
-    addUtilities(customUtils)
-  }
+    .fromPairs()
+    .value()
 }
+
+module.exports = plugin(function({ theme, addUtilities }) {
+  // Style
+  const underlineStyle = {
+    '.underline-solid': {
+      textDecorationStyle: 'solid',
+    },
+    '.underline-dotted': {
+      textDecorationStyle: 'dotted',
+    },
+    '.underline-double': {
+      textDecorationStyle: 'double',
+    },
+    '.underline-dashed': {
+      textDecorationStyle: 'dashed',
+    },
+    '.underline-wavy': {
+      textDecorationStyle: 'wavy',
+    }
+  }
+
+  // Colours
+  const colors = flattenColorPalette(
+    theme('colors')
+  )
+
+  const underlineColors = _.map(colors, color => {
+    return {
+      [`.underline-${color}`]: {
+          textDecorationColor: color,
+      },
+    }
+  })
+
+  // Offset
+  const offset = theme('underlineOffset')
+
+  const underlineOffset = _.map(offset, (offset, key) => {
+    return {
+      [`.underline-offset-${key}`]: {
+        textUnderlineOffset: offset,
+      },
+    }
+  })
+
+  // Thickness
+  const thickness = theme('underlineThickness')
+
+  const underlineThickness = _.map(thickness, (thickness, key) => {
+    return {
+      [`.underline-${key}`]: {
+          textDecorationThickness: thickness,
+      },
+    }
+  })
+
+  addUtilities(underlineStyle)
+  addUtilities(underlineColors)
+  addUtilities(underlineOffset)
+  addUtilities(underlineThickness)
+});
