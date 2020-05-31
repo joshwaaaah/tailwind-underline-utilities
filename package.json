@@ -1,6 +1,6 @@
 {
   "name": "tailwind-underline-utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Underline utilities for TailwindCSS.",
   "main": "index.js",
   "scripts": {
