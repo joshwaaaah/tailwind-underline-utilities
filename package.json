@@ -4,7 +4,8 @@
   "description": "Underline utilities for TailwindCSS.",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "release": "release-it"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
     "jest": "^26.0.1",
     "jest-matcher-css": "^1.1.0",
     "postcss": "^7.0.31",
+    "release-it": "^13.6.1",
     "tailwindcss": "^1.4.6"
   }
 }
