@@ -20,19 +20,19 @@ const flattenColorPalette = (colors) => {
 module.exports = plugin(function({ theme, addUtilities }) {
   // Style
   const underlineStyle = {
-    '.underline-solid': {
+    '.underline-style-solid': {
       textDecorationStyle: 'solid',
     },
-    '.underline-dotted': {
+    '.underline-style-dotted': {
       textDecorationStyle: 'dotted',
     },
-    '.underline-double': {
+    '.underline-style-double': {
       textDecorationStyle: 'double',
     },
-    '.underline-dashed': {
+    '.underline-style-dashed': {
       textDecorationStyle: 'dashed',
     },
-    '.underline-wavy': {
+    '.underline-style-wavy': {
       textDecorationStyle: 'wavy',
     }
   }
@@ -66,7 +66,7 @@ module.exports = plugin(function({ theme, addUtilities }) {
 
   const underlineThickness = _.map(thickness, (thickness, key) => {
     return {
-      [`.underline-${key}`]: {
+      [`.underline-thickness-${key}`]: {
           textDecorationThickness: thickness,
       },
     }

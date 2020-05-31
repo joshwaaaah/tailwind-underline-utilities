@@ -36,19 +36,19 @@ test('it should create default values for underline style', () => {
   return generatePluginCss({theme:{colors:{}}
   }).then(css => {
     expect(css).toMatchCss(`
-      .underline-solid {
+      .underline-style-solid {
         text-decoration-style: solid;
       }
-      .underline-dotted {
+      .underline-style-dotted {
         text-decoration-style: dotted;
       }
-      .underline-double {
+      .underline-style-double {
         text-decoration-style: double;
       }
-      .underline-dashed {
+      .underline-style-dashed {
         text-decoration-style: dashed;
       }
-      .underline-wavy {
+      .underline-style-wavy {
         text-decoration-style: wavy;
       }
     `);
@@ -69,19 +69,19 @@ test('it should create underline colours based on theme config', () => {
     },
   }).then(css => {
     expect(css).toMatchCss(`
-      .underline-solid {
+      .underline-style-solid {
         text-decoration-style: solid;
       }
-      .underline-dotted {
+      .underline-style-dotted {
         text-decoration-style: dotted;
       }
-      .underline-double {
+      .underline-style-double {
         text-decoration-style: double;
       }
-      .underline-dashed {
+      .underline-style-dashed {
         text-decoration-style: dashed;
       }
-      .underline-wavy {
+      .underline-style-wavy {
         text-decoration-style: wavy;
       }
       .underline-red {
@@ -111,25 +111,25 @@ test('it should create underline thickness utilities based on theme config', () 
     },
   }).then(css => {
     expect(css).toMatchCss(`
-      .underline-solid {
+      .underline-style-solid {
         text-decoration-style: solid;
       }
-      .underline-dotted {
+      .underline-style-dotted {
         text-decoration-style: dotted;
       }
-      .underline-double {
+      .underline-style-double {
         text-decoration-style: double;
       }
-      .underline-dashed {
+      .underline-style-dashed {
         text-decoration-style: dashed;
       }
-      .underline-wavy {
+      .underline-style-wavy {
         text-decoration-style: wavy;
       }
-      .underline-thin {
+      .underline-thickness-thin {
         text-decoration-thickness: 2px;
       }
-      .underline-thick {
+      .underline-thickness-thick {
         text-decoration-thickness: 5px;
       }
     `);
@@ -147,19 +147,19 @@ test('it should create underline offset utilities based on theme config', () => 
     },
   }).then(css => {
     expect(css).toMatchCss(`
-      .underline-solid {
+      .underline-style-solid {
         text-decoration-style: solid;
       }
-      .underline-dotted {
+      .underline-style-dotted {
         text-decoration-style: dotted;
       }
-      .underline-double {
+      .underline-style-double {
         text-decoration-style: double;
       }
-      .underline-dashed {
+      .underline-style-dashed {
         text-decoration-style: dashed;
       }
-      .underline-wavy {
+      .underline-style-wavy {
         text-decoration-style: wavy;
       }
       .underline-offset-small {
