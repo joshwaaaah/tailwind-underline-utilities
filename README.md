@@ -11,7 +11,7 @@ To install, run `npm i tailwind-underline-utils` in your site's front-end direct
 
 ```
 plugins: [
-  require('tailwindcss-underline-utils')
+  require('tailwind-underline-utils')
 ]
 ```
 ## Configuration
