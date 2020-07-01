@@ -6,7 +6,17 @@ A simple Tailwind plugin written to create underline utilities.
 - [Underline thickness](#underline-thickness)
 - [Underline offset](#underline-offset)
 
-## Underline Style
+## Installation
+To install, run `npm i tailwind-underline-utils` in your site's front-end directory. Then `require` the plugin within your Tailwind configuration file, for instance:
+
+```
+plugins: [
+  require('tailwindcss-underline-utils')
+]
+```
+## Configuration
+
+### Underline Style
 By default, the plugin will generate the following set of underline styles.
 ```
 .underline-style-solid {
@@ -26,7 +36,7 @@ By default, the plugin will generate the following set of underline styles.
 }
 ```
 
-## Underline Colour
+### Underline Colour
 The plugin will generate custom `text-decoration-color` values based on the theme's config. For example, the following colour configuration:
 ```
 colors: {
@@ -44,7 +54,7 @@ will generate the following classes:
 }
 ```
 
-## Underline Thickness
+### Underline Thickness
 The plugin also exposes an `underlineThickness` configuration object which can be added to the `theme` config. For example, the following configuration:
 ```
 theme: {
@@ -64,12 +74,14 @@ will generate the following CSS:
 }
 ```
 
-## Underline Offset
+### Underline Offset
 Finally, the plugin exposes an `underlineOffset` theme configuration object. For example, the following theme configuration:
 ```
-underlineOffset: {
-  'small': '2px',
-  'medium': '5px',
+theme: {
+  underlineOffset: {
+    'small': '2px',
+    'medium': '5px',
+  }
 }
 ```
 will generate the following CSS:
