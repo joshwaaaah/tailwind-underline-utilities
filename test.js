@@ -228,7 +228,6 @@ test('it should create group-hover variant for underline colours ', () => {
       underlineColors: ['group-hover'],
     }
   }).then(css => {
-    console.log(css)
     expect(css).toMatchCss(`
       .underline-style-solid {
         text-decoration-style: solid;
