@@ -17,7 +17,7 @@ const flattenColorPalette = (colors) => {
     .value()
 }
 
-module.exports = plugin(function({ theme, addUtilities }) {
+module.exports = plugin(function({ theme, addUtilities, variants }) {
   // Style
   const underlineStyle = {
     '.underline-style-solid': {
@@ -72,8 +72,8 @@ module.exports = plugin(function({ theme, addUtilities }) {
     }
   })
 
-  addUtilities(underlineStyle)
-  addUtilities(underlineColors)
-  addUtilities(underlineOffset)
-  addUtilities(underlineThickness)
+  addUtilities(underlineStyle, variants('underlineStyle'))
+  addUtilities(underlineColors, variants('underlineColors'))
+  addUtilities(underlineOffset, variants('underlineOffset'))
+  addUtilities(underlineThickness, variants('underlineThickness'))
 });
