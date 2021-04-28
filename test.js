@@ -171,3 +171,92 @@ test('it should create underline offset utilities based on theme config', () => 
     `);
   });
 });
+
+test('it should create hover variant for underline colours ', () => {
+  return generatePluginCss({
+    theme: {
+      colors: {
+        red: 'red',
+        green: 'green',
+      }
+    },
+    variants: {
+      underlineColors: ['hover'],
+    }
+  }).then(css => {
+    expect(css).toMatchCss(`
+      .underline-style-solid {
+        text-decoration-style: solid;
+      }
+      .underline-style-dotted {
+        text-decoration-style: dotted;
+      }
+      .underline-style-double {
+        text-decoration-style: double;
+      }
+      .underline-style-dashed {
+        text-decoration-style: dashed;
+      }
+      .underline-style-wavy {
+        text-decoration-style: wavy;
+      }
+      .underline-red {
+        text-decoration-color: red;
+      }
+      .underline-green {
+        text-decoration-color: green;
+      }
+      .hover\\:underline-red:hover {
+        text-decoration-color: red;
+      }
+      .hover\\:underline-green:hover {
+        text-decoration-color: green;
+      }
+    `);
+  });
+});
+
+test('it should create group-hover variant for underline colours ', () => {
+  return generatePluginCss({
+    theme: {
+      colors: {
+        red: 'red',
+        green: 'green',
+      }
+    },
+    variants: {
+      underlineColors: ['group-hover'],
+    }
+  }).then(css => {
+    console.log(css)
+    expect(css).toMatchCss(`
+      .underline-style-solid {
+        text-decoration-style: solid;
+      }
+      .underline-style-dotted {
+        text-decoration-style: dotted;
+      }
+      .underline-style-double {
+        text-decoration-style: double;
+      }
+      .underline-style-dashed {
+        text-decoration-style: dashed;
+      }
+      .underline-style-wavy {
+        text-decoration-style: wavy;
+      }
+      .underline-red {
+        text-decoration-color: red;
+      }
+      .underline-green {
+        text-decoration-color: green;
+      }
+      .group:hover .group-hover\\:underline-red {
+        text-decoration-color: red;
+      }
+      .group:hover .group-hover\\:underline-green {
+        text-decoration-color: green;
+      }
+    `);
+  });
+});
