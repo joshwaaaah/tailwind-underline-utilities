@@ -24,7 +24,7 @@
     "jest": "^26.1.0",
     "jest-matcher-css": "^1.1.0",
     "postcss": "^7.0.32",
-    "release-it": "^13.6.4",
+    "release-it": "^15.5.1",
     "tailwindcss": "^1.4.6"
   },
   "dependencies": {}
